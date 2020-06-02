@@ -289,7 +289,6 @@ extend(ChartInternal.prototype, {
 	 * @param {HTMLElement} element
 	 */
 	showTooltip(selectedData, element) {
-		selectedData.x = (selectedData.x).toFixed(2)
 		const $$ = this;
 		const config = $$.config;
 		const bindto = config.tooltip_contents.bindto;
@@ -302,6 +301,7 @@ extend(ChartInternal.prototype, {
 
 		let datum = $$.tooltip.datum();
 		let {width = 0, height = 0} = datum || {};
+		selectedData.x = (selectedData.x).toFixed(2)
 		const dataStr = JSON.stringify(selectedData);
 
 		if (!datum || datum.current !== dataStr) {

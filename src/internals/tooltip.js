@@ -289,6 +289,7 @@ extend(ChartInternal.prototype, {
 	 * @param {HTMLElement} element
 	 */
 	showTooltip(selectedData, element) {
+		selectedData.x = (selectedData.x).toFixed(2)
 		const $$ = this;
 		const config = $$.config;
 		const bindto = config.tooltip_contents.bindto;

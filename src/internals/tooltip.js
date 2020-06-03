@@ -301,10 +301,12 @@ extend(ChartInternal.prototype, {
 
 		let datum = $$.tooltip.datum();
 		let {width = 0, height = 0} = datum || {};
-		selectedData = selectedData.map( (element) =>{
-			element.x = (parseFloat(element.x)).toFixed(2)
-			return element
-		})
+
+		selectedData = selectedData.map(element => {
+			element.x = (parseFloat(element.x)).toFixed(2);
+			element.value = (parseFloat(element.value)).toFixed(2);
+			return element;
+		});
 
 		const dataStr = JSON.stringify(selectedData);
 

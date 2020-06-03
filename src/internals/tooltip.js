@@ -301,7 +301,7 @@ extend(ChartInternal.prototype, {
 
 		let datum = $$.tooltip.datum();
 		let {width = 0, height = 0} = datum || {};
-		selectedData.x = (selectedData.x).toFixed(2)
+		selectedData.x = (parseFloat((selectedData.x))).toFixed(2).toString()
 		const dataStr = JSON.stringify(selectedData);
 
 		if (!datum || datum.current !== dataStr) {
